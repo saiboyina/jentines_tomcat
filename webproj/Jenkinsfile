@@ -34,7 +34,7 @@ pipeline {
                 
                 input message : 'approve deploy in production'
                  }
-            bulid job : 'deploy_pipeline_productionarea'
+            build job : 'deploy_pipeline_productionarea'
             }
             post
             {
