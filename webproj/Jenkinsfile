@@ -1,22 +1,22 @@
 pipeline{
-    agent any
-    {
-        stages
-        {
-        stage
-            {
-                steps('Initilaize')
-                {
-                    echo "====++++something++++===="
+    agent{
+        
+        stages{
+            stage("build"){
+                steps{
+                    bat 'mvn clean package'
                 }
-            }
-        stage
-            {
-                steps('bulid')
+                post
                 {
-                    echo " my bulid"
+                    success
+                    {
+                        echo " now archving"
+                        archiveArtifacts artifacts : '**/*.war'
+                    }
+                   
                 }
             }
         }
+       
     }
-            
+}
