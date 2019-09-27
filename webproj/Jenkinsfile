@@ -25,5 +25,32 @@ pipeline {
                 build job : 'deploy_stagingarea_pipelinecode'
             }
         }
+        stage('deploy in production area')
+        {
+            steps
+            {
+                timeout (time : 5,units : 'DAYS') 
+                { 
+                submitter : saiboyina1@gmail.com
+                input message : 'approve deploy in production'
+                 }
+            bulid job : 'deploy_pipeline_productionarea'
+            }
+            post
+            {
+                steps
+                {
+                    success
+                    {
+                        echo 'deployd successfuly in production'
+                    }
+                    failure
+                    {
+                        echo 'deployment is failuer'
+                    }
+
+                }
+            }
+        }
     }
 }
