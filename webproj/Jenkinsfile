@@ -31,7 +31,7 @@ pipeline {
             {
                 timeout (time : 5,units : 'DAYS') 
                 { 
-                submitter : saiboyina1@gmail.com
+                submitter : 'saiboyina1@gmail.com'
                 input message : 'approve deploy in production'
                  }
             bulid job : 'deploy_pipeline_productionarea'
