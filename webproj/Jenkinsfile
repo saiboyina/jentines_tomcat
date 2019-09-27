@@ -38,8 +38,6 @@ pipeline {
             }
             post
             {
-                steps
-                {
                     success
                     {
                         echo 'deployd successfuly in production'
@@ -48,8 +46,6 @@ pipeline {
                     {
                         echo 'deployment is failuer'
                     }
-
-                }
             }
         }
     }
